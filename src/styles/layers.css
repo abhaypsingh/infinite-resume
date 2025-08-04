@@ -1,0 +1,165 @@
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: all 1s var(--transition-quantum);
+}
+
+.layer-0-gateway {
+  z-index: 100;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(139, 92, 246, 0.1) 0%,
+    rgba(10, 10, 11, 0.95) 50%,
+    var(--color-quantum-black) 100%
+  );
+}
+
+.layer-1-narrative {
+  z-index: 90;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.05) 0%,
+    rgba(16, 185, 129, 0.05) 100%
+  );
+  backdrop-filter: blur(10px);
+}
+
+.layer-2-philosophy {
+  z-index: 80;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(139, 92, 246, 0.03) 0deg,
+    rgba(59, 130, 246, 0.03) 120deg,
+    rgba(16, 185, 129, 0.03) 240deg,
+    rgba(139, 92, 246, 0.03) 360deg
+  );
+}
+
+.layer-3-technical {
+  z-index: 70;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(161, 161, 170, 0.01) 10px,
+    rgba(161, 161, 170, 0.01) 20px
+  );
+}
+
+.layer-4-psychological {
+  z-index: 60;
+  background: radial-gradient(
+    circle at 30% 40%,
+    rgba(139, 92, 246, 0.15) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 70% 60%,
+    rgba(59, 130, 246, 0.15) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 50% 50%,
+    rgba(16, 185, 129, 0.15) 0%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+}
+
+.layer-transition {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.layer-portal {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.8) 0%,
+    rgba(59, 130, 246, 0.4) 50%,
+    transparent 100%
+  );
+  filter: blur(2px);
+  animation: portalPulse 3s ease-in-out infinite;
+}
+
+@keyframes portalPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.layer-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--fibonacci-55);
+}
+
+.layer-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.9);
+}
+
+.layer-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.layer-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.infinity-grid {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: 
+    linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(1000px) rotateX(60deg) scale(2);
+  animation: gridFlow 20s linear infinite;
+}
+
+@keyframes gridFlow {
+  0% {
+    transform: perspective(1000px) rotateX(60deg) scale(2) translateZ(0);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(60deg) scale(2) translateZ(-50px);
+  }
+}
+
+.fractal-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  filter: contrast(200%) brightness(150%);
+  mix-blend-mode: overlay;
+}

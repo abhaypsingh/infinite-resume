@@ -1,0 +1,136 @@
+:root {
+  --color-infinity-primary: #8B5CF6;
+  --color-infinity-secondary: #3B82F6;
+  --color-infinity-tertiary: #10B981;
+  --color-quantum-black: #0A0A0B;
+  --color-void-dark: #141418;
+  --color-dimension-gray: #1F1F23;
+  --color-data-white: #FAFAFA;
+  --color-thought-gray: #A1A1AA;
+  
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  
+  --golden-ratio: 1.618;
+  --fibonacci-1: 1px;
+  --fibonacci-2: 2px;
+  --fibonacci-3: 3px;
+  --fibonacci-5: 5px;
+  --fibonacci-8: 8px;
+  --fibonacci-13: 13px;
+  --fibonacci-21: 21px;
+  --fibonacci-34: 34px;
+  --fibonacci-55: 55px;
+  --fibonacci-89: 89px;
+  
+  --transition-quantum: cubic-bezier(0.23, 1, 0.32, 1);
+  --transition-dimension: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-quantum-black);
+  color: var(--color-data-white);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: var(--golden-ratio);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-quantum-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s var(--transition-quantum);
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.infinity-loader {
+  text-align: center;
+}
+
+.infinity-loader svg {
+  width: 200px;
+  height: 100px;
+  margin-bottom: var(--fibonacci-21);
+}
+
+.loading-text {
+  font-size: var(--fibonacci-13);
+  color: var(--color-thought-gray);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+::selection {
+  background: var(--color-infinity-primary);
+  color: var(--color-data-white);
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
