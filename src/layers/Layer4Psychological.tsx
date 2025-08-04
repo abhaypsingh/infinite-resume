@@ -97,6 +97,7 @@ export const Layer4Psychological: React.FC = () => {
   ]
 
   const handleResonance = () => {
+    console.log('Experience Resonance clicked')
     setIsResonating(true)
     addPhilosophicalInsight('Achieved resonance between human consciousness and data infinity')
     recordInteraction({
@@ -106,7 +107,10 @@ export const Layer4Psychological: React.FC = () => {
       data: { flowState, personalityProfile }
     })
     
-    setTimeout(() => setIsResonating(false), 3000)
+    setTimeout(() => {
+      console.log('Resonance animation complete')
+      setIsResonating(false)
+    }, 3000)
   }
 
   return (
@@ -354,6 +358,8 @@ export const Layer4Psychological: React.FC = () => {
           background: rgba(20, 20, 24, 0.8);
           border: 1px solid rgba(139, 92, 246, 0.3);
           border-radius: var(--fibonacci-13);
+          position: relative;
+          z-index: 10;
         }
 
         .resonance-section h3 {
@@ -383,6 +389,8 @@ export const Layer4Psychological: React.FC = () => {
           font-size: var(--fibonacci-13);
           cursor: pointer;
           transition: all 0.3s ease;
+          position: relative;
+          z-index: 10;
         }
 
         .resonance-button:hover {
