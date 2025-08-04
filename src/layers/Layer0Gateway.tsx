@@ -233,6 +233,29 @@ export const Layer0Gateway: React.FC<Layer0GatewayProps> = ({ onEnter }) => {
         >
           <p>Navigate with consciousness • Interact with purpose • Discover connections</p>
         </motion.div>
+
+        <motion.div
+          className="recruiter-quickstart"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 3, duration: 1 }}
+        >
+          <h3>For Executive Recruiters</h3>
+          <p className="quickstart-subtitle">Skip to what matters most</p>
+          <div className="contact-quick">
+            <a href="mailto:abhay.singh@gmail.com" className="contact-link">
+              <span className="contact-icon">📧</span>
+              abhay.singh@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/mindful-abhay" target="_blank" rel="noopener noreferrer" className="contact-link">
+              <span className="contact-icon">🔗</span>
+              LinkedIn Profile
+            </a>
+          </div>
+          <p className="recruiter-note">
+            100+ hours invested in demonstrating—not claiming—capabilities
+          </p>
+        </motion.div>
       </motion.div>
 
       <style dangerouslySetInnerHTML={{ __html: `
@@ -336,6 +359,81 @@ export const Layer0Gateway: React.FC<Layer0GatewayProps> = ({ onEnter }) => {
           color: var(--color-thought-gray);
           font-family: var(--font-mono);
           letter-spacing: 0.05em;
+        }
+
+        .recruiter-quickstart {
+          position: fixed;
+          top: var(--fibonacci-34);
+          right: var(--fibonacci-34);
+          background: rgba(20, 20, 24, 0.9);
+          border: 1px solid rgba(139, 92, 246, 0.3);
+          border-radius: var(--fibonacci-13);
+          padding: var(--fibonacci-21);
+          backdrop-filter: blur(20px);
+          max-width: 320px;
+          z-index: 20;
+        }
+
+        .recruiter-quickstart h3 {
+          font-size: var(--fibonacci-13);
+          color: var(--color-infinity-primary);
+          margin-bottom: var(--fibonacci-8);
+          font-weight: 500;
+        }
+
+        .quickstart-subtitle {
+          font-size: var(--fibonacci-8);
+          color: var(--color-thought-gray);
+          margin-bottom: var(--fibonacci-13);
+          font-family: var(--font-mono);
+        }
+
+        .contact-quick {
+          display: flex;
+          flex-direction: column;
+          gap: var(--fibonacci-8);
+          margin-bottom: var(--fibonacci-13);
+        }
+
+        .contact-link {
+          display: flex;
+          align-items: center;
+          gap: var(--fibonacci-8);
+          padding: var(--fibonacci-8) var(--fibonacci-13);
+          background: rgba(139, 92, 246, 0.1);
+          border: 1px solid rgba(139, 92, 246, 0.2);
+          border-radius: var(--fibonacci-5);
+          color: var(--color-data-white);
+          text-decoration: none;
+          transition: all 0.3s ease;
+          font-size: var(--fibonacci-8);
+        }
+
+        .contact-link:hover {
+          background: rgba(139, 92, 246, 0.2);
+          border-color: var(--color-infinity-primary);
+          transform: translateX(5px);
+        }
+
+        .contact-icon {
+          font-size: var(--fibonacci-13);
+        }
+
+        .recruiter-note {
+          font-size: var(--fibonacci-8);
+          color: var(--color-infinity-tertiary);
+          line-height: var(--golden-ratio);
+          text-align: center;
+          padding-top: var(--fibonacci-8);
+          border-top: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        @media (max-width: 768px) {
+          .recruiter-quickstart {
+            top: var(--fibonacci-21);
+            right: var(--fibonacci-21);
+            max-width: 280px;
+          }
         }
       ` }} />
     </div>
