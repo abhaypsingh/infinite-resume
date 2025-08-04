@@ -8,7 +8,7 @@ interface ContactPortalProps {
 
 export const ContactPortal: React.FC<ContactPortalProps> = ({ flowState }) => {
   const [isExpanded, setIsExpanded] = useState(false)
-  const [contactMethod, setContactMethod] = useState<'email' | 'linkedin' | 'calendar' | null>(null)
+  const [contactMethod, setContactMethod] = useState<'email' | 'linkedin' | null>(null)
   const { addTechnicalAchievement, journeyProgress } = useInfiniteStore()
 
   const handleContact = (method: typeof contactMethod) => {
@@ -23,9 +23,8 @@ export const ContactPortal: React.FC<ContactPortalProps> = ({ flowState }) => {
   }
 
   const contactInfo = {
-    email: 'ai.strategist@infinitedata.io',
-    linkedin: 'linkedin.com/in/data-infinity',
-    calendar: 'calendly.com/infinite-possibilities'
+    email: 'abhay.singh@gmail.com',
+    linkedin: 'linkedin.com/in/mindful-abhay'
   }
 
   return (
@@ -85,16 +84,6 @@ export const ContactPortal: React.FC<ContactPortalProps> = ({ flowState }) => {
                 <span className="method-description">Connect and collaborate</span>
               </motion.button>
               
-              <motion.button
-                className="contact-method"
-                onClick={() => handleContact('calendar')}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="method-icon">📅</span>
-                <span className="method-label">Schedule Meeting</span>
-                <span className="method-description">Book a discovery call</span>
-              </motion.button>
             </div>
 
             {contactMethod && (

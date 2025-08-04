@@ -33,7 +33,7 @@ The Infinite Resume is not just a portfolio—it's a journey through five dimens
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/infinite-resume.git
+git clone https://github.com/abhaypsingh/infinite-resume.git
 
 # Navigate to the project
 cd infinite-resume
@@ -86,9 +86,8 @@ This resume explores the intersection of:
 
 Ready to explore the infinite possibilities of data together?
 
-- **Email**: ai.strategist@infinitedata.io
-- **LinkedIn**: linkedin.com/in/data-infinity
-- **Calendar**: calendly.com/infinite-possibilities
+- **Email**: abhay.singh@gmail.com
+- **LinkedIn**: linkedin.com/in/mindful-abhay
 
 ## 📄 License
 
