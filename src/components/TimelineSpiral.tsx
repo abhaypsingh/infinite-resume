@@ -47,9 +47,12 @@ export const TimelineSpiral: React.FC<TimelineSpiralProps> = ({ data, onNodeSele
     const totalPoints = turns * pointsPerTurn
     const radius = 8
     const height = 15
-    const startYear = Math.min(...data.map(d => d.year))
-    const endYear = Math.max(...data.map(d => d.year))
-    const yearRange = endYear - startYear
+    const years = data.map(d => d.year).filter(y => !isNaN(y))
+    if (years.length === 0) return { points: [], nodePositions: [] }
+    
+    const startYear = Math.min(...years)
+    const endYear = Math.max(...years)
+    const yearRange = endYear - startYear || 1
     
     // Generate spiral
     for (let i = 0; i <= totalPoints; i++) {
@@ -96,13 +99,15 @@ export const TimelineSpiral: React.FC<TimelineSpiralProps> = ({ data, onNodeSele
   return (
     <group ref={groupRef}>
       {/* Spiral line */}
-      <Line
-        points={spiralPoints.points}
-        color="#8B5CF6"
-        lineWidth={2}
-        transparent
-        opacity={0.3}
-      />
+      {spiralPoints.points && spiralPoints.points.length > 0 && (
+        <Line
+          points={spiralPoints.points}
+          color="#8B5CF6"
+          lineWidth={2}
+          transparent
+          opacity={0.3}
+        />
+      )}
       
       {/* Time markers */}
       {[2018, 2020, 2022, 2024].map((year, index) => {
@@ -180,7 +185,7 @@ export const TimelineSpiral: React.FC<TimelineSpiralProps> = ({ data, onNodeSele
               targetNode.position
             ]
             
-            return (
+            return points && points.length >= 2 ? (
               <Line
                 key={`${node.id}-${targetId}`}
                 points={points}
@@ -189,7 +194,7 @@ export const TimelineSpiral: React.FC<TimelineSpiralProps> = ({ data, onNodeSele
                 transparent
                 opacity={0.2}
               />
-            )
+            ) : null
           })}
         </group>
       ))}
